@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - DATABASE_URL=sqlite:///./storage/app.db
+      - UPLOAD_DIR=./storage/uploads
+      - CHROMA_PERSIST_DIR=./storage/chroma
+      - LLM_API_KEY=${LLM_API_KEY}
+      - EMBEDDING_API_KEY=${EMBEDDING_API_KEY}
+    volumes:
+      - ./storage/uploads:/app/storage/uploads
+      - ./storage/chroma:/app/storage/chroma
+      - ./storage/app.db:/app/storage/app.db
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  uploads:
+  chroma:
+  db:

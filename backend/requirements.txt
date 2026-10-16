@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-multipart
+pydantic-settings
+pymupdf
+chromadb
+sqlalchemy
+pydantic
+httpx
+pytest
+pytest-cov
+pytest-asyncio
+tenacity
+python-dotenv
+tiktoken

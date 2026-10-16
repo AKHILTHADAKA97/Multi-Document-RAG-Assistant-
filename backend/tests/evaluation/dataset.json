@@ -1,0 +1,20 @@
+[
+  {
+    "question": "What is the annual leave policy?",
+    "document_id": "demo_handbook",
+    "expected_answer": "Employees receive 18 days of annual leave per year.",
+    "expected_pages": [12]
+  },
+  {
+    "question": "What is the policy for remote work?",
+    "document_id": "demo_handbook",
+    "expected_answer": "Remote work is allowed up to 2 days per week with manager approval.",
+    "expected_pages": [8]
+  },
+  {
+    "question": "What benefits are not covered in the document?",
+    "document_id": "demo_handbook",
+    "expected_answer": "insufficient evidence",
+    "expected_pages": []
+  }
+]
